@@ -13,6 +13,8 @@ function App() {
   const [category, setCategory] = useState("")
   const [price, setPrice] = useState("")
 
+
+  // Adding New Product
   const handleSubmit = (e) => {
     e.preventDefault();
     const newTransaction = {
@@ -34,6 +36,8 @@ function App() {
     
   }
 
+
+  //For deleting products
   const deleterecord = (id) => {
     fetch("https://dummyjson.com/products" + id, { method: 'DELETE' }).then((response) => response.json())
       .then((result) => {
@@ -42,7 +46,7 @@ function App() {
       })
   }
 
-
+  //for showing products
   const fetchProductData = () => {
     fetch("https://dummyjson.com/products")
       .then(response => {
