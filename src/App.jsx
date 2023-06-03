@@ -34,6 +34,8 @@ function App() {
     })
       .then((resp) => resp.json())
       .then((newQuestion) => console.log(newQuestion))
+
+      fetchProductData()
     
   }
 
