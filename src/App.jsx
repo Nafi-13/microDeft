@@ -5,6 +5,7 @@ import viteLogo from '/vite.svg'
 
 function App() {
   //const [count, setCount] = useState(0)
+  const [searchItem, setSearchItem] = useState('')
   const [productss, setProducts] = useState([])
 
   //const [id, setid] = useState("")
@@ -34,6 +35,20 @@ function App() {
       .then((resp) => resp.json())
       .then((newQuestion) => console.log(newQuestion))
     
+  }
+
+  function Search({ search, onSearchChange }) {
+    return (
+      <div className='ui large fluid icon input'>
+        <input
+          type='text'
+          placeholder='Search your Recent Transactions'
+          onChange={onSearchChange}
+          value={search}
+        />
+        <i className='circular search link icon'></i>
+      </div>
+    )
   }
 
 
